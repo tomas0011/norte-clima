@@ -68,6 +68,9 @@ export const config = {
     "Trabajamos con repuestos de calidad acordes a cada equipo.",
   disclaimerMonotributo:
     "Monotributista. Emitimos factura tipo C.",
+  // Disclaimer completo para auditoría Google Ads
+  disclaimerCompleto:
+    "Somos un servicio técnico independiente, monotributista. No somos servicio oficial de ninguna marca. Emitimos factura C. El técnico a cargo tiene más de 15 años de experiencia en el rubro.",
 
   // ============================================
   // URLs GENERADAS DINÁMICAMENTE

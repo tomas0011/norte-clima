@@ -68,11 +68,11 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Disclaimer legal completo */}
+        {/* Disclaimer legal completo - Transparencia para auditoría Google Ads */}
         <div className="border-t border-neutral-800 mt-8 pt-8">
           <div className="bg-neutral-800/50 rounded-lg p-4 mb-4">
             <p className="text-sm text-neutral-400 leading-relaxed">
-              {config.disclaimer}
+              {config.disclaimerCompleto}
             </p>
           </div>
         </div>
