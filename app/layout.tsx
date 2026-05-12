@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import AuroraBackground from "@/components/AuroraBackground";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Norte Clima - Servicio Técnico de Calderas en CABA y GBA",
@@ -33,7 +35,9 @@ export default function RootLayout({
     <html lang="es">
       <body className="antialiased">
         <AuroraBackground />
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

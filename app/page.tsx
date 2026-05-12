@@ -9,9 +9,10 @@
  * - Zonas: Cobertura sin fricción (search optional)
  * - FAQ: Preguntas frecuentes
  * - Sobre Nosotros: E-E-A-T
+ * 
+ * Nota: Header y Footer están en el layout (layout.tsx)
  */
 
-import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import ProblemasComunes from '@/components/ProblemasComunes';
 import Beneficios from '@/components/Beneficios';
@@ -20,13 +21,11 @@ import Testimonios from '@/components/Testimonios';
 import Zonas from '@/components/Zonas';
 import FAQ from '@/components/FAQ';
 import SobreNosotros from '@/components/SobreNosotros';
-import Footer from '@/components/Footer';
 import WhatsAppFlotante from '@/components/WhatsAppFlotante';
 
 export default function Home() {
   return (
     <main>
-      <Header />
       <Hero />
       <ProblemasComunes />
       <Beneficios />
@@ -35,7 +34,6 @@ export default function Home() {
       <Zonas />
       <FAQ />
       <SobreNosotros />
-      <Footer />
       <WhatsAppFlotante />
     </main>
   );
