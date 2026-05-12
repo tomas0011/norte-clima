@@ -1,38 +1,80 @@
 /**
  * Configuración centralizada del sitio
  * Centraliza todos los datos editables del negocio
+ * Datos integrados desde CUESTIONARIO-ERS.md
  */
 
 export const config = {
-  // Información de la empresa
+  // ============================================
+  // DATOS LEGALES Y FISCALES (del cuestionario)
+  // ============================================
+  razonSocial: "Marcelo Jose Segurola",
+  segundoTitular: "Mariela Yanina Cino",
+  cuit: "20-23178745-4",
+  cuit2: "27-28107887-4",
+  condicionFiscal: "Monotributo",
+  facturaTipo: "C",
+  direccionFiscal: "Juan de Langara, CABA",
+
+  // ============================================
+  // INFORMACIÓN DE LA EMPRESA
+  // ============================================
   companyName: "Norte Clima",
-  phone: "+5491158403106",
+  phone: "+5491169127078",
   phoneFormatted: "11 6912-7078",
-  whatsapp: "5491158403106",
+  phoneAlt: "+5491158403106",
+  phoneAltFormatted: "11 5840-3106",
+  whatsapp: "5491169127078",
   whatsappMessage:
     "Hola, necesito información sobre servicio técnico de calderas",
   email: "yacalderas@gmail.com",
+  emailAlt: "info@yacalderas.com",
+  emailAlt2: "norteclima22@gmail.com",
 
-  // Horario de atención
-  schedule: "Lunes a Viernes de 8:00 a 19:00, Sabado de 8:00 a 14:00",
-  scheduleShort: "Lun-Vie 8:00-19:00, Sab 8:00-14:00",
+  // ============================================
+  // HORARIO DE ATENCIÓN (del cuestionario)
+  // ============================================
+  schedule: "Lunes a Viernes de 8:00 a 19:00, Sábado de 8:00 a 14:00",
+  scheduleShort: "Lun-Vie 8:00-19:00, Sáb 8:00-14:00",
+  horarioAtencion: "08:00 a 19:00 hs",
+  horarioTecnico: "10:00 a 17:00 hs",
 
-  // Cobertura geográfica (lee de cost-rules.json)
-  coverageZones: ["CABA", "Zona Norte", "Zona Oeste", "Zona Sur"] as const,
+  // ============================================
+  // COBERTURA GEOGRÁFICA (del cuestionario)
+  // ============================================
+  coverageZones: ["CABA", "Gran Buenos Aires"] as const,
+  zonasDetalle: ["Capital Federal", "Gran Buenos Aires"] as const,
 
   // Ciudades con cobertura (cargadas desde cost-rules.json)
   coveredCities: [] as string[],
 
-  // Marcas con las que trabajan (NO son oficiales)
+  // ============================================
+  // SERVICIOS (del cuestionario)
+  // ============================================
+  ofreceUrgencias: false,
+  tiempoRespuesta: "Casi inmediato",
+
+  // ============================================
+  // MARCAS (NO son oficiales)
+  // ============================================
   brands: ["Baxi", "Peisa", "Ariston", "Orbis", "Euterma", "Caldaia"] as const,
 
-  // Descargo legal - servicio independiente (actualizado para Google Ads)
+  // ============================================
+  // DESCARGO LEGAL (servicio independiente)
+  // ============================================
   disclaimer:
     "Servicio técnico independiente. No somos servicio oficial ni estamos afiliados a ninguna marca.",
   disclaimerRepuestos:
     "Trabajamos con repuestos de calidad acordes a cada equipo.",
+  disclaimerMonotributo:
+    "Monotributista. Emitimos factura tipo C.",
+  // Disclaimer completo para auditoría Google Ads
+  disclaimerCompleto:
+    "Somos un servicio técnico independiente, monotributista. No somos servicio oficial de ninguna marca. Emitimos factura C. El técnico a cargo tiene más de 15 años de experiencia en el rubro.",
 
-  // URLs generadas dinámicamente
+  // ============================================
+  // URLs GENERADAS DINÁMICAMENTE
+  // ============================================
   get whatsappUrl(): string {
     return `https://wa.me/${this.whatsapp}?text=${encodeURIComponent(this.whatsappMessage)}`;
   },
