@@ -77,6 +77,19 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Links a documentos legales */}
+        <div className="flex flex-wrap justify-center gap-6 mt-4 text-sm">
+          <a href="/garantia" className="text-neutral-400 hover:text-primary-400 transition-colors">
+            Política de Garantía
+          </a>
+          <a href="/privacidad" className="text-neutral-400 hover:text-primary-400 transition-colors">
+            Política de Privacidad
+          </a>
+          <a href="/terminos" className="text-neutral-400 hover:text-primary-400 transition-colors">
+            Términos y Condiciones
+          </a>
+        </div>
+
         {/* Barra inferior */}
         <div className="border-t border-neutral-800 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
