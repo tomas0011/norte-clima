@@ -3,32 +3,35 @@
  * Muestra las 4 áreas principales de negocio
  */
 
-import { ServiceIcon, WrenchIcon, ClipboardIcon, MagnifierIcon } from './Icons';
-import { config } from '@/lib/config';
+import { ServiceIcon, WrenchIcon, ClipboardIcon, MagnifierIcon } from "./Icons";
+import { config } from "@/lib/config";
 
 const servicios = [
   {
-    id: 'reparacion',
-    titulo: 'Reparación',
-    descripcion: 'Fallas de presión, agua caliente o calefacción. Revisamos y arreglamos en tu domicilio.',
+    id: "reparacion",
+    titulo: "Reparación",
+    descripcion:
+      "Fallas de presión, agua caliente o calefacción. Revisamos y arreglamos en tu domicilio.",
     Icon: WrenchIcon,
   },
   {
-    id: 'mantenimiento',
-    titulo: 'Mantenimiento',
-    descripcion: 'Revisión anual para que tu caldera funcione bien y no te deje sin calefacción en invierno.',
+    id: "mantenimiento",
+    titulo: "Mantenimiento",
+    descripcion:
+      "Revisión anual para que tu caldera funcione bien y no te deje sin calefacción en invierno.",
     Icon: ServiceIcon,
   },
   {
-    id: 'instalacion',
-    titulo: 'Instalación',
-    descripcion: 'Colocamos calderas nuevas, reemplazamos equipos viejos y adaptamos la instalación.',
+    id: "instalacion",
+    titulo: "Instalación",
+    descripcion:
+      "Colocamos calderas nuevas, reemplazamos equipos viejos y adaptamos la instalación.",
     Icon: ClipboardIcon,
   },
   {
-    id: 'diagnostico',
-    titulo: 'Diagnóstico',
-    descripcion: 'Revisión completa con presupuesto detallado.',
+    id: "diagnostico",
+    titulo: "Diagnóstico",
+    descripcion: "Revisión completa con presupuesto detallado.",
     Icon: MagnifierIcon,
   },
 ];
@@ -39,9 +42,7 @@ export default function Servicios() {
       <div className="container-main">
         {/* Encabezado */}
         <div className="text-center mb-16">
-          <h2 className="section-title">
-            Nuestros Servicios
-          </h2>
+          <h2 className="section-title">Nuestros Servicios</h2>
           <p className="section-subtitle">
             Soluciones completas para tu sistema de calefacción
           </p>
@@ -63,7 +64,8 @@ export default function Servicios() {
                 {servicio.titulo}
               </h3>
 
-              <p className="text-neutral-600 text-sm leading-relaxed"
+              <p
+                className="text-neutral-600 text-sm leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: servicio.descripcion }}
               />
             </div>
@@ -72,7 +74,19 @@ export default function Servicios() {
 
         {/* Nota adicional */}
         <p className="text-center text-neutral-500 text-sm mt-12">
-          ¿No encontraste lo que buscas? <a href={config.phoneUrl} className="text-primary-600 hover:underline font-medium">Contáctanos</a> para consultas específicas.
+          ¿No encontraste lo que buscas?{" "}
+          <a
+            href={config.phoneUrl}
+            className="text-primary-600 hover:underline font-medium"
+          >
+            Contáctanos
+          </a>{" "}
+          para consultas específicas.
+        </p>
+
+        <p className="text-center text-neutral-500 text-sm mt-12">
+          Todos y cada uno de nuestros servicios se pagan al finalizar el
+          trabajo.
         </p>
       </div>
     </section>

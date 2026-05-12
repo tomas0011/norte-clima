@@ -3,6 +3,8 @@ import "./globals.css";
 import AuroraBackground from "@/components/AuroraBackground";
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Norte Clima - Servicio Técnico de Calderas en CABA y GBA",
@@ -35,7 +37,9 @@ export default function RootLayout({
     <html lang="es">
       <body className="antialiased">
         <AuroraBackground />
+        <Header />
         {children}
+        <Footer />
         <Analytics />
         <SpeedInsights />
       </body>

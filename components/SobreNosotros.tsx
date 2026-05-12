@@ -1,7 +1,7 @@
 /**
  * Sobre Nosotros - E-E-A-T para Google Ads
- * Muestra al técnico real con credentials
- * Evita parecer "unipersonal improvisado"
+ * Datos integrados desde cuestionario -真实性 (autenticidad)
+ * Evita claims exagerados que pueden generar rechazo en auditoría
  */
 
 import WhatsAppButton from "./WhatsAppButton";
@@ -14,41 +14,36 @@ export default function SobreNosotros() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Columna izquierda: contenido */}
           <div>
-            {/* Badge con credentials */}
+            {/* Badge con experiencia real */}
             <div className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <span className="w-2 h-2 bg-primary-500 rounded-full" />
-              Técnicos calificados   • +20 años de experiencia
+              Más de 15 años de experiencia • Servicio a domicilio
             </div>
 
             {/* Título */}
             <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
-              Quiénes Somos
+              Servicio técnico de calderas
               <br />
-              <span className="text-primary-600">Norte Clima</span>
+              <span className="text-primary-600">en CABA y Gran Buenos Aires</span>
             </h2>
 
-            {/* Descripción */}
+            {/* Descripción - técnico real, sin exageraciones */}
             <div className="space-y-4 text-neutral-600 leading-relaxed">
               <p>
-                En Norte Clima contamos con más de 20 años de trayectoria brindando servicio técnico de calderas en Capital Federal y Gran Buenos Aires. Nacimos en Hurlingham con el objetivo de ofrecer un servicio confiable, transparente y profesional para cada familia.
+                Soy <strong className="text-neutral-900">Marcelo José Segurola</strong>, técnico especializado en reparación de calderas. Trabajo de forma independiente, sin intermediarios, lo que me permite ofrecer un servicio más personalizado y presupuestos más claros.
               </p>
               <p>
-                Con el tiempo, fuimos ampliando nuestra propuesta para cubrir las necesidades más frecuentes del hogar:
+                Atiendo en todo CABA y Gran Buenos Aires con más de 15 años de experiencia en el rubro. No tengo matrícula profesional, pero tengo amplia experiencia práctica resolviendo problemas de calderas de todas las marcas del mercado.
               </p>
-              <ul className="list-disc list-inside space-y-2 text-neutral-600 ml-2">
-                <li>Mantenimiento de calderas murales y de piso, trabajando con marcas líderes como <strong>Baxi</strong> y <strong>Caldaia</strong>.</li>
-                <li>Mantenimiento preventivo de pisos radiantes, clave para asegurar eficiencia energética y prolongar la vida útil del sistema.</li>
-                <li>Reparación de climatizadores de pileta, garantizando un funcionamiento seguro y óptimo en todas las temporadas.</li>
-              </ul>
-              <p className="mt-4">
-                Nuestra cobertura abarca todo Capital Federal y el Gran Buenos Aires, incluyendo localidades como Hurlingham, Morón, Moreno, Castelar e Ituzaingó. Gracias a la recomendación de nuestros clientes, seguimos creciendo con el mismo compromiso: garantizar confort, seguridad y eficiencia energética en cada hogar.
+              <p>
+                Soy <strong>monotributista</strong> y emito factura tipo C. Trabajo con repuestos de calidad adaptados a cada equipo.
               </p>
             </div>
 
-            {/* Credentials de confianza */}
+            {/* Credentials reales */}
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-neutral-50 rounded-lg p-4">
-                <div className="text-xl font-bold text-primary-600">+20</div>
+                <div className="text-xl font-bold text-primary-600">+15</div>
                 <div className="text-sm text-neutral-600">
                   años de experiencia
                 </div>
@@ -59,8 +54,24 @@ export default function SobreNosotros() {
               </div>
             </div>
 
-            {/* Técnico calificado */}
+            {/* Datos fiscales reales */}
             <div className="mt-6 flex flex-wrap gap-4 text-sm text-neutral-500">
+              <span className="flex items-center gap-1">
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+                Monotributista • Factura C
+              </span>
               <span className="flex items-center gap-1">
                 <svg
                   className="w-4 h-4"
@@ -75,7 +86,7 @@ export default function SobreNosotros() {
                     d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                   />
                 </svg>
-                Técnico calificado
+                CUIT: {config.cuit}
               </span>
             </div>
 
@@ -121,18 +132,18 @@ export default function SobreNosotros() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={1.5}
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                   />
                 </svg>
               </div>
 
-              {/* Info de la empresa */}
+              {/* Info del técnico */}
               <div className="text-center">
                 <h3 className="text-xl font-bold text-neutral-900 mb-1">
-                  {config.companyName}
+                  Marcelo José Segurola
                 </h3>
                 <p className="text-neutral-600 text-sm mb-4">
-                  Servicio técnico profesional
+                  Técnico independiente • Monotributista
                 </p>
 
                 {/* Separador */}
@@ -147,7 +158,7 @@ export default function SobreNosotros() {
                         viewBox="0 0 24 24"
                         fill="currentColor"
                       >
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.132-.127.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.495-.024-.124-.747-.748-.747-1.423 0-1.65.85-2.467 1.165-2.92.148-.214.395-.246.535-.246h.196c2.254 0 4.085.933 4.967 2.584.296.553.296 1.456.296 1.456v2.336c0 .296-.074.495-.445.495-.296 0-.744-.198-1.73-.743-1.01-.553-1.656-1.232-1.656-2.271 0-1.938 1.493-3.478 2.595-3.478.296 0 .596.074.768.223.173.148.297.297.371.446.074.149.025.372-.025.52-.05.148-.173.347-.446.52-.823.496-1.35 1.162-1.35 2.271 0 1.65 1.493 3.478 3.478 3.478.99 0 1.797-.297 2.268-.744.174-.174.222-.372.222-.495v-.075c0-.493-.198-.818-.496-1.022-.297-.198-.768-.248-1.165-.248h-.196c-.645 0-1.72.074-2.47.743z" />
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.132-.127.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371.025-.495-.024-.124-.747-.748-.747-1.423 0-1.65.85-2.467 1.165-2.92.148-.214.395-.246.535-.246h.196c2.254 0 4.085.933 4.967 2.584.296.553.296 1.456.296 1.456v2.336c0 .296-.074.495-.445.495-.296 0-.744-.198-1.73-.743-1.01-.553-1.656-1.232-1.656-2.271 0-1.938 1.493-3.478 2.595-3.478.296 0 .596.074.768.223.173.148.297.297.371.446.074.149.025.372-.025.52-.05.148-.173.347-.446.52-.823.496-1.35 1.162-1.35 2.271 0 1.65 1.493 3.478 3.478 3.478.99 0 1.797-.297 2.268-.744.174-.174.222-.372.222-.495v-.075c0-.493-.198-.818-.496-1.022-.297-.198-.768-.248-1.165-.248h-.196c-.645 0-1.72.074-2.47.743z" />
                       </svg>
                     </div>
                     <div>
@@ -207,7 +218,31 @@ export default function SobreNosotros() {
                     <div>
                       <p className="text-xs text-neutral-500">Zona</p>
                       <p className="text-sm font-medium text-neutral-900">
-                        CABA y GBA
+                        {config.coverageZones.join(" y ")}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <svg
+                        className="w-4 h-4 text-purple-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-xs text-neutral-500">Facturación</p>
+                      <p className="text-sm font-medium text-neutral-900">
+                        Factura C • Monotributo
                       </p>
                     </div>
                   </div>
@@ -215,7 +250,7 @@ export default function SobreNosotros() {
               </div>
             </div>
 
-            {/* Elemento decorativo */}
+            {/* Elementos decorativos */}
             <div className="absolute -top-4 -right-4 w-16 h-16 bg-primary-100 rounded-full opacity-50" />
             <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-orange-100 rounded-full opacity-50" />
           </div>
