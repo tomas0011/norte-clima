@@ -4,14 +4,32 @@
  * Datos integrados desde CUESTIONARIO-ERS.md
  */
 
+// ============================================
+// TÉCNICOS DEL SERVICIO (debe definirse ANTES de config)
+// ============================================
+export const tecnicos = [
+  {
+    nombre: "Marcelo José Segurola",
+    cuit: "20-23178745-4",
+    rol: "Técnico principal",
+  },
+  {
+    nombre: "Mariela Yanina Cino",
+    cuit: "27-28107887-4",
+    rol: "Técnica",
+  },
+] as const;
+
+export type Tecnico = (typeof tecnicos)[number];
+
 export const config = {
   // ============================================
   // DATOS LEGALES Y FISCALES (del cuestionario)
   // ============================================
-  razonSocial: "Marcelo Jose Segurola",
-  segundoTitular: "Mariela Yanina Cino",
-  cuit: "20-23178745-4",
-  cuit2: "27-28107887-4",
+  razonSocial: tecnicos[0].nombre,
+  segundoTitular: tecnicos[1].nombre,
+  cuit: tecnicos[0].cuit,
+  cuit2: tecnicos[1].cuit,
   condicionFiscal: "Monotributo",
   facturaTipo: "C",
   direccionFiscal: "Juan de Langara, CABA",
