@@ -33,13 +33,10 @@ export default function SobreNosotros() {
             {/* Descripción - técnico real, sin exageraciones */}
             <div className="space-y-4 text-neutral-600 leading-relaxed">
               <p>
-                Somos{" "}
-                <strong className="text-neutral-900">
-                  Marcelo José Segurola y Mariela Yanina Cino
-                </strong>
-                , técnicos especializados en reparación de calderas. Trabajamos
-                de forma independiente, sin intermediarios, lo que nos permite
-                ofrecer un servicio más personalizado y presupuestos más claros.
+                Somos técnicos especializados en reparación de calderas.
+                Trabajamos de forma independiente, sin intermediarios, lo que
+                nos permite ofrecer un servicio más personalizado y presupuestos
+                más claros.
               </p>
               <p>
                 Atendemos en todo CABA y Gran Buenos Aires con más de 15 años de
