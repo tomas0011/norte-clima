@@ -32,12 +32,8 @@ export default function TecnicoCard({ nombre, cuit, rol }: TecnicoCardProps) {
 
       {/* Info del técnico */}
       <div className="text-center">
-        <h3 className="text-lg font-bold text-neutral-900 mb-1">
-          {nombre}
-        </h3>
-        {rol && (
-          <p className="text-neutral-600 text-sm mb-2">{rol}</p>
-        )}
+        <h3 className="text-lg font-bold text-neutral-900 mb-1">{nombre}</h3>
+        {rol && <p className="text-neutral-600 text-sm mb-2">{rol}</p>}
 
         {/* CUIT del técnico */}
         <p className="text-sm text-neutral-500">CUIT: {cuit}</p>

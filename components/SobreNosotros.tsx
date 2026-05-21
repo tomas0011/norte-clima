@@ -25,19 +25,31 @@ export default function SobreNosotros() {
             <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
               Servicio técnico de calderas
               <br />
-              <span className="text-primary-600">en CABA y Gran Buenos Aires</span>
+              <span className="text-primary-600">
+                en CABA y Gran Buenos Aires
+              </span>
             </h2>
 
             {/* Descripción - técnico real, sin exageraciones */}
             <div className="space-y-4 text-neutral-600 leading-relaxed">
               <p>
-                Somos <strong className="text-neutral-900">Marcelo José Segurola y Mariela Yanina Cino</strong>, técnicos especializados en reparación de calderas. Trabajamos de forma independiente, sin intermediarios, lo que nos permite ofrecer un servicio más personalizado y presupuestos más claros.
+                Somos{" "}
+                <strong className="text-neutral-900">
+                  Marcelo José Segurola y Mariela Yanina Cino
+                </strong>
+                , técnicos especializados en reparación de calderas. Trabajamos
+                de forma independiente, sin intermediarios, lo que nos permite
+                ofrecer un servicio más personalizado y presupuestos más claros.
               </p>
               <p>
-                Atendemos en todo CABA y Gran Buenos Aires con más de 15 años de experiencia en el rubro. No tenemos matrícula profesional, pero tenemos amplia experiencia práctica resolviendo problemas de calderas de todas las marcas del mercado.
+                Atendemos en todo CABA y Gran Buenos Aires con más de 15 años de
+                experiencia en el rubro. No tenemos matrícula profesional, pero
+                tenemos amplia experiencia práctica resolviendo problemas de
+                calderas de todas las marcas del mercado.
               </p>
               <p>
-                Somos <strong>monotributistas</strong> y emitimos factura tipo C. Trabajamos con repuestos de calidad adaptados a cada equipo.
+                Somos <strong>monotributistas</strong> y emitimos factura tipo
+                C. Trabajamos con repuestos de calidad adaptados a cada equipo.
               </p>
             </div>
 
@@ -87,7 +99,6 @@ export default function SobreNosotros() {
                     d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                   />
                 </svg>
-                CUIT: {config.cuit} / {config.cuit2}
               </span>
             </div>
 
@@ -194,17 +205,6 @@ export default function SobreNosotros() {
 
           {/* Columna derecha: tarjetas de técnicos */}
           <div className="relative">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {tecnicos.map((tecnico, index) => (
-                <TecnicoCard
-                  key={index}
-                  nombre={tecnico.nombre}
-                  cuit={tecnico.cuit}
-                  rol={tecnico.rol}
-                />
-              ))}
-            </div>
-
             {/* Elementos decorativos */}
             <div className="absolute -top-4 -right-4 w-16 h-16 bg-primary-100 rounded-full opacity-50" />
             <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-orange-100 rounded-full opacity-50" />

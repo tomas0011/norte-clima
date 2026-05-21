@@ -2,8 +2,8 @@
 
 ## Información General
 
-**Proveedor del servicio**: Norte Clima (Marcelo José Segurola - Monotributista)  
-**CUIT**: 20-23178745-4  
+**Proveedor del servicio**: Norte Clima (Marcelo José Segurola - Monotributista)
+
 **Dirección**: Juan de Langara, CABA  
 **Teléfono**: 11 6912-7078  
 **Email**: yacalderas@gmail.com  
@@ -133,4 +133,4 @@ Para consultas sobre estos términos y condiciones:
 
 ---
 
-*Este documento es una propuesta y puede ser modificado según las necesidades del negocio.*
+_Este documento es una propuesta y puede ser modificado según las necesidades del negocio._

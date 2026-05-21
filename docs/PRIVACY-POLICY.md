@@ -4,7 +4,6 @@
 
 **Sitio web**: yacalderas.com  
 **Responsable**: Marcelo José Segurola (Monotributista)  
-**CUIT**: 20-23178745-4  
 **Última actualización**: Mayo 2026
 
 ---
@@ -120,4 +119,4 @@ Para consultas sobre esta política de privacidad:
 
 ---
 
-*Este documento es una propuesta y puede ser modificado según las necesidades del negocio.*
+_Este documento es una propuesta y puede ser modificado según las necesidades del negocio._
