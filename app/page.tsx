@@ -20,6 +20,8 @@ import Servicios from '@/components/Servicios';
 import Testimonios from '@/components/Testimonios';
 import Zonas from '@/components/Zonas';
 import FAQ from '@/components/FAQ';
+import NuestrosTrabajos from '@/components/NuestrosTrabajos';
+import ModelosCalderas from '@/components/ModelosCalderas';
 import SobreNosotros from '@/components/SobreNosotros';
 import WhatsAppFlotante from '@/components/WhatsAppFlotante';
 
@@ -31,9 +33,11 @@ export default function Home() {
       <Beneficios />
       <Servicios />
       <Testimonios />
+      <NuestrosTrabajos />
       <Zonas />
-      <FAQ />
+      <ModelosCalderas />
       <SobreNosotros />
+      <FAQ />
       <WhatsAppFlotante />
     </main>
   );
