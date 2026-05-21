@@ -18,9 +18,7 @@ export default function PrivacidadPage() {
           Política de Privacidad
         </h1>
 
-        <p className="text-neutral-600 mb-8">
-          {config.companyName} • {config.razonSocial}
-        </p>
+        <p className="text-neutral-600 mb-8">{config.companyName}</p>
 
         <div className="bg-white rounded-xl p-8 shadow-sm">
           <h2 className="text-xl font-bold text-neutral-900 mb-4">

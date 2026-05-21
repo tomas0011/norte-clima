@@ -19,7 +19,7 @@ export default function TerminosPage() {
         </h1>
 
         <p className="text-neutral-600 mb-8">
-          {config.companyName} • {config.razonSocial} • {config.condicionFiscal}
+          {config.companyName}• {config.condicionFiscal}
         </p>
 
         <div className="bg-white rounded-xl p-8 shadow-sm">
