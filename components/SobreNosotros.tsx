@@ -19,7 +19,7 @@ export default function SobreNosotros() {
           {/* Badge con experiencia real */}
           <div className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
             <span className="w-2 h-2 bg-primary-500 rounded-full" />
-            Más de 15 años de experiencia • Servicio a domicilio
+            Más de 20 años de experiencia • Servicio a domicilio
           </div>
 
           {/* Título */}
@@ -40,7 +40,7 @@ export default function SobreNosotros() {
               más claros.
             </p>
             <p>
-              Atendemos en todo CABA y Gran Buenos Aires con más de 15 años de
+              Atendemos en todo CABA y Gran Buenos Aires con más de 20 años de
               experiencia en el rubro. No tenemos matrícula profesional, pero
               tenemos amplia experiencia práctica resolviendo problemas de
               calderas de todas las marcas del mercado.
@@ -54,7 +54,7 @@ export default function SobreNosotros() {
           {/* Credentials reales */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             <div className="bg-neutral-50 rounded-lg p-4">
-              <div className="text-xl font-bold text-primary-600">+15</div>
+              <div className="text-xl font-bold text-primary-600">+20</div>
               <div className="text-sm text-neutral-600">
                 años de experiencia
               </div>

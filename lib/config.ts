@@ -93,7 +93,7 @@ export const config = {
     "Monotributista. Emitimos factura tipo C.",
   // Disclaimer completo para auditoría Google Ads
   disclaimerCompleto:
-    "Somos un servicio técnico independiente, monotributista. No somos servicio oficial de ninguna marca. Emitimos factura C. El técnico a cargo tiene más de 15 años de experiencia en el rubro.",
+    "Somos un servicio técnico independiente, monotributista. No somos servicio oficial de ninguna marca. Emitimos factura C. El técnico a cargo tiene más de 20 años de experiencia en el rubro.",
 
   // ============================================
   // URLs GENERADAS DINÁMICAMENTE
