@@ -71,6 +71,7 @@ export default function Beneficios() {
           <HorizontalCarousel
             className="h-full"
             speed={60}
+            ariaLabel="Beneficios de nuestro servicio"
           >
             {beneficios.map((beneficio) => (
               <BeneficioCard

@@ -4,6 +4,7 @@
  */
 
 import { QuoteIcon } from './Icons';
+import { config } from '@/lib/config';
 
 const testimonios = [
   {
@@ -76,7 +77,12 @@ export default function Testimonios() {
         {/* Nota */}
         <p className="text-center text-neutral-500 text-sm mt-12">
           ¿Tenés una emergencia con tu caldera?{' '}
-          <a href="#" className="text-primary-600 hover:underline font-medium">
+          <a
+            href={config.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 hover:underline font-medium"
+          >
             Escribinos por WhatsApp
           </a>
         </p>

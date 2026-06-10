@@ -11,12 +11,14 @@ interface HorizontalCarouselProps {
   children: ReactNode;
   className?: string;
   speed?: number; // segundos por scroll completo
+  ariaLabel?: string;
 }
 
 export default function HorizontalCarousel({
   children,
   className = "",
   speed = 20,
+  ariaLabel,
 }: HorizontalCarouselProps) {
   // Duplicar los items para el loop infinito
   // Necesitamos suficientes duplicados para fillscreen + scroll
@@ -32,9 +34,12 @@ export default function HorizontalCarousel({
   ];
 
   return (
-    <div 
+    <div
+      role="group"
+      aria-label={ariaLabel}
+      aria-roledescription="carrusel"
       className={`relative overflow-hidden ${className}`}
-      style={{ 
+      style={{
         maskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent)',
         WebkitMaskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent)',
       }}

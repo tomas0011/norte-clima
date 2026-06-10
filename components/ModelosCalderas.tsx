@@ -1,11 +1,7 @@
 /**
  * Modelos de Calderas - Formato discreto en línea
- * Pills/chips compactos en carrusel horizontal
+ * Server Component: el "Ver más" usa <details> nativo (cero JS de cliente).
  */
-
-"use client";
-
-import { useState } from "react";
 
 const modelos = [
   { nombre: "MAIN 24FI/I", tag: "Más instalado" },
@@ -38,10 +34,9 @@ function ModeloPill({ nombre, tag }: { nombre: string; tag: string | null }) {
 }
 
 export default function ModelosCalderas() {
-  const [mostrarTodos, setMostrarTodos] = useState(false);
-
-  const modelosVisibles = mostrarTodos ? modelos : modelos.slice(0, VISIBLES_INICIALES);
-  const restantes = modelos.length - VISIBLES_INICIALES;
+  const modelosIniciales = modelos.slice(0, VISIBLES_INICIALES);
+  const modelosRestantes = modelos.slice(VISIBLES_INICIALES);
+  const restantes = modelosRestantes.length;
 
   return (
     <section id="modelos" className="py-16">
@@ -56,7 +51,7 @@ export default function ModelosCalderas() {
 
         {/* Pills en línea - formato discreto */}
         <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
-          {modelosVisibles.map((modelo) => (
+          {modelosIniciales.map((modelo) => (
             <ModeloPill
               key={modelo.nombre}
               nombre={modelo.nombre}
@@ -65,16 +60,25 @@ export default function ModelosCalderas() {
           ))}
         </div>
 
-        {/* Ver más / Ver menos */}
+        {/* Ver más / Ver menos con <details> nativo (sin JS) */}
         {restantes > 0 && (
-          <div className="text-center mt-6">
-            <button
-              onClick={() => setMostrarTodos(!mostrarTodos)}
-              className="text-primary-600 hover:text-primary-700 font-medium text-sm underline"
-            >
-              {mostrarTodos ? 'Ver menos' : `Ver ${restantes} modelos más`}
-            </button>
-          </div>
+          <details className="group mt-4">
+            <summary className="text-center list-none cursor-pointer [&::-webkit-details-marker]:hidden">
+              <span className="text-primary-600 hover:text-primary-700 font-medium text-sm underline">
+                <span className="group-open:hidden">Ver {restantes} modelos más</span>
+                <span className="hidden group-open:inline">Ver menos</span>
+              </span>
+            </summary>
+            <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto mt-4">
+              {modelosRestantes.map((modelo) => (
+                <ModeloPill
+                  key={modelo.nombre}
+                  nombre={modelo.nombre}
+                  tag={modelo.tag}
+                />
+              ))}
+            </div>
+          </details>
         )}
       </div>
     </section>

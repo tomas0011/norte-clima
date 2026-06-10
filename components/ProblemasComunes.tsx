@@ -64,6 +64,7 @@ export default function ProblemasComunes() {
               itemHeight={88}
               className="h-full"
               speed={30}
+              ariaLabel="Problemas comunes de calderas que resolvemos"
             >
               {problemas.map((problema) => (
                 <ProblemaCard
