@@ -7,6 +7,7 @@
  */
 
 import WhatsAppButton from "./WhatsAppButton";
+import { WrenchIcon, FlameIcon, DropletIcon } from "./Icons";
 
 const trabajos = [
   {
@@ -14,21 +15,21 @@ const trabajos = [
     titulo: "Reparación de Calderas",
     descripcion:
       "Ofrecemos un servicio de reparación de calderas que asegura la eficiencia y seguridad del sistema. Diagnosticamos fallas de encendido, fugas y ruidos, utilizando repuestos originales.",
-    icono: "🔧",
+    Icon: WrenchIcon,
   },
   {
     id: 2,
     titulo: "Mantenimiento de Piso Radiante",
     descripcion:
       "Detectamos fugas, problemas en bomba o termostatos, asegurando distribución uniforme del calor y eficiencia energética.",
-    icono: "🔥",
+    Icon: FlameIcon,
   },
   {
     id: 3,
     titulo: "Reparación de Climatizadores de Piscina",
     descripcion:
       "Solucionamos fallas eléctricas, compresores y refrigerante para mantener la temperatura ideal todo el año.",
-    icono: "🏊",
+    Icon: DropletIcon,
   },
 ];
 
@@ -38,6 +39,7 @@ export default function NuestrosTrabajos() {
       <div className="container-main">
         {/* Encabezado */}
         <div className="text-center mb-10 md:mb-16">
+          <span className="section-eyebrow">Lo que hacemos</span>
           <h2 className="section-title">Nuestros Trabajos</h2>
           <p className="section-subtitle">
             Servicios especializados que realizamos
@@ -49,16 +51,16 @@ export default function NuestrosTrabajos() {
           {trabajos.map((trabajo) => (
             <article
               key={trabajo.id}
-              className="bg-white rounded-2xl shadow-sm flex md:flex-col items-start md:items-center gap-4 md:gap-0 md:text-center p-4 md:p-8"
+              className="card-accent flex md:flex-col items-start md:items-center gap-4 md:gap-0 md:text-center !p-4 md:!p-8"
             >
               {/* Ícono: chico en mobile, grande en desktop */}
-              <div className="w-12 h-12 md:w-20 md:h-20 bg-primary-100 rounded-full flex items-center justify-center shrink-0 md:mx-auto md:mb-6">
-                <span className="text-2xl md:text-4xl">{trabajo.icono}</span>
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-primary-100 text-primary-600 rounded-xl flex items-center justify-center shrink-0 md:mx-auto md:mb-6">
+                <trabajo.Icon className="w-6 h-6 md:w-8 md:h-8" />
               </div>
 
               <div>
                 {/* Título */}
-                <h3 className="text-base md:text-xl font-bold text-neutral-900 mb-1 md:mb-3">
+                <h3 className="font-display text-base md:text-xl font-bold text-neutral-900 mb-1 md:mb-3">
                   {trabajo.titulo}
                 </h3>
 

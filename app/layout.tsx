@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Sora, Inter } from "next/font/google";
 import "./globals.css";
 import AuroraBackground from "@/components/AuroraBackground";
 import { Analytics } from '@vercel/analytics/next';
@@ -6,6 +7,21 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { config } from "@/lib/config";
+
+// Tipografía de marca: Sora para titulares (carácter técnico/industrial),
+// Inter para texto. Cargadas vía next/font (self-hosted, sin requests externos).
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+  display: "swap",
+  weight: ["600", "700", "800"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(config.siteUrl),
@@ -78,7 +94,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" className={`${inter.variable} ${sora.variable}`}>
       <body className="antialiased">
         <script
           type="application/ld+json"

@@ -14,6 +14,7 @@
  */
 
 import Hero from '@/components/Hero';
+import BandaCredibilidad from '@/components/BandaCredibilidad';
 import ProblemasComunes from '@/components/ProblemasComunes';
 import Beneficios from '@/components/Beneficios';
 import Servicios from '@/components/Servicios';
@@ -29,6 +30,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <BandaCredibilidad />
       <ProblemasComunes />
       <Beneficios />
       <Servicios />

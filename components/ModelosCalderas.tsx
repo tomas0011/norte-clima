@@ -3,6 +3,8 @@
  * Server Component: el "Ver más" usa <details> nativo (cero JS de cliente).
  */
 
+import { config } from "@/lib/config";
+
 const modelos = [
   { nombre: "MAIN 24FI/I", tag: "Más instalado" },
   { nombre: "ECO 3/240/280", tag: "Más instalado" },
@@ -43,9 +45,14 @@ export default function ModelosCalderas() {
       <div className="container-main">
         {/* Encabezado compact */}
         <div className="text-center mb-8">
+          <span className="section-eyebrow">Compatibilidad</span>
           <h2 className="section-title">Modelos que reparamos</h2>
-          <p className="section-subtitle">
-            Baxi y Caldaia
+          <p className="section-subtitle !mb-3">
+            Trabajamos con la mayoría de marcas y modelos del mercado
+          </p>
+          {/* Marcas como mención secundaria (no protagonista) */}
+          <p className="text-sm text-neutral-500">
+            {config.brands.join(" · ")} y muchas otras
           </p>
         </div>
 

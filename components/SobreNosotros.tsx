@@ -10,10 +10,12 @@ import TecnicoCard from "./TecnicoCard";
 
 export default function SobreNosotros() {
   return (
-    <section id="nosotros" className="py-20 bg-white/30">
+    <section id="nosotros" className="py-20 bg-white">
       <div className="container-main">
         {/* Layout de una sola columna con mejor distribución */}
         <div className="max-w-3xl mx-auto">
+          <div className="section-eyebrow">Quiénes somos</div>
+
           {/* Badge con experiencia real */}
           <div className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
             <span className="w-2 h-2 bg-primary-500 rounded-full" />
@@ -21,7 +23,7 @@ export default function SobreNosotros() {
           </div>
 
           {/* Título */}
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+          <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 mb-6">
             Servicio técnico de calderas
             <br />
             <span className="text-primary-600">

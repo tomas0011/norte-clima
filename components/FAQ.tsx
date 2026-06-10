@@ -22,7 +22,7 @@ const faqs = [
   {
     pregunta: "¿Qué marcas reparan?",
     respuesta:
-      "Trabajamos principalmente con Baxi y Caldaia, pero también atendemos otras marcas. Consultanos.",
+      "Somos un servicio multimarca: trabajamos con la mayoría de las marcas del mercado. Contanos qué caldera tenés y te confirmamos.",
   },
   {
     pregunta: "¿Cada cuánto conviene hacer mantenimiento a una caldera?",
@@ -77,6 +77,7 @@ export default function FAQ() {
       <div className="container-main">
         {/* Encabezado */}
         <div className="text-center mb-16">
+          <span className="section-eyebrow">Dudas comunes</span>
           <h2 className="section-title">Preguntas frecuentes</h2>
           <p className="section-subtitle">Lo que nos preguntan siempre</p>
         </div>

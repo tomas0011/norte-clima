@@ -1,76 +1,33 @@
 /**
- * Zonas de Cobertura - Sin fricción + Buscador de costos
- * Muestra cobertura en texto + permite consultar costo de visita
+ * Zonas de Cobertura - Cobertura en texto, sin fricción
+ * Server Component (el buscador de costos se quitó de la UI; antes quedaba
+ * lógica de cliente muerta).
  */
 
-"use client";
-
-import { useState, useMemo } from "react";
 import WhatsAppButton from "./WhatsAppButton";
-import costRulesData from "@/shared/cost-rules.json";
 
-const zonas = [
-  { nombre: "CABA" },
-  { nombre: "Zona Norte" },
-  { nombre: "Zona Oeste" },
-  { nombre: "Zona Sur" },
-];
-
-function formatCurrency(value: number): string {
-  return new Intl.NumberFormat("es-AR", {
-    style: "currency",
-    currency: "ARS",
-    maximumFractionDigits: 0,
-  }).format(value);
-}
+const zonas = ["CABA", "Zona Norte", "Zona Oeste", "Zona Sur"];
 
 export default function Zonas() {
-  const [search, setSearch] = useState("");
-  const [selectedCity, setSelectedCity] = useState<string | null>(null);
-
-  // Ciudades disponibles del JSON
-  const cities = Object.keys(costRulesData).sort();
-
-  // Filtrar en tiempo real
-  const filteredCities = useMemo(() => {
-    if (!search.trim()) return cities.slice(0, 6);
-    const query = search.toLowerCase();
-    return cities
-      .filter((city) => city.toLowerCase().includes(query))
-      .slice(0, 6);
-  }, [search]);
-
-  const handleCitySelect = (city: string) => {
-    setSearch(city);
-    setSelectedCity(city);
-  };
-
-  const costo = selectedCity
-    ? costRulesData[selectedCity as keyof typeof costRulesData]
-    : 0;
-  const hasCoverage = selectedCity && costo > 0;
-
   return (
     <section id="zonas" className="py-16">
       <div className="container-main">
         {/* Encabezado */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-neutral-900 mb-2">
-            Zonas de Cobertura
-          </h2>
-          <p className="text-neutral-600">
-            Llegamos a toda CABA y GBA
-          </p>
+          <span className="section-eyebrow">Dónde llegamos</span>
+          <h2 className="section-title">Zonas de Cobertura</h2>
+          <p className="section-subtitle !mb-8">Llegamos a toda CABA y GBA</p>
         </div>
 
         {/* Pills de zonas */}
         <div className="flex flex-wrap justify-center gap-3 mb-8">
           {zonas.map((zona) => (
             <span
-              key={zona.nombre}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-neutral-100 text-neutral-700 rounded-full text-sm font-medium hover:bg-neutral-200 transition-colors cursor-default"
+              key={zona}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-neutral-200 text-neutral-700 rounded-full text-sm font-medium hover:border-primary-300 hover:text-primary-600 transition-colors"
             >
-              {zona.nombre}
+              <span className="w-1.5 h-1.5 rounded-full bg-primary-500" />
+              {zona}
             </span>
           ))}
         </div>
@@ -81,7 +38,7 @@ export default function Zonas() {
         </p>
 
         {/* Nota de cobertura extendida */}
-        <div className="mt-8 bg-primary-50 rounded-xl p-5 text-center">
+        <div className="mt-8 bg-primary-50 border border-primary-100 rounded-xl p-5 text-center">
           <p className="text-primary-700">
             <span className="font-semibold">¿Tu zona no está en la lista?</span>{" "}
             Consultanos — llegamos a más localidades.

@@ -29,12 +29,45 @@
     @apply bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6;
   }
 
+  /* Card con acento de marca: línea naranja superior que aparece en hover */
+  .card-accent {
+    @apply relative bg-white rounded-xl border border-neutral-200 p-6 transition-all duration-300 hover:border-primary-300 hover:shadow-lg;
+  }
+  .card-accent::before {
+    content: "";
+    @apply absolute inset-x-0 top-0 h-1 rounded-t-xl bg-primary-500 scale-x-0 origin-left transition-transform duration-300;
+  }
+  .card-accent:hover::before {
+    @apply scale-x-100;
+  }
+
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-neutral-900 text-center mb-4;
+    @apply font-display text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 text-center mb-4;
   }
 
   .section-subtitle {
     @apply text-lg text-neutral-600 text-center max-w-2xl mx-auto mb-12;
+  }
+
+  /* Chip de etiqueta de sección (eyebrow) sobre el título */
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-primary-600 mb-3;
+  }
+}
+
+@layer utilities {
+  /* Textura "blueprint": grilla técnica sutil. Variantes clara y oscura. */
+  .bg-blueprint {
+    background-image:
+      linear-gradient(to right, rgba(13, 13, 13, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(13, 13, 13, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .bg-blueprint-dark {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
 }
 
