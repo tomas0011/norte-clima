@@ -8,19 +8,36 @@ import WhatsAppButton from "./WhatsAppButton";
 import { config } from "@/lib/config";
 
 export default function Hero() {
+  const confianza = [
+    "+20 años en el rubro",
+    "Técnico titular",
+    "Mayoría de marcas",
+    "Garantía propia",
+    "Servicio garantizado",
+  ];
+
   return (
-    // <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-700 pt-16">
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16 backdrop-invert-[0.85]">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16 bg-neutral-950">
+      {/* Grilla blueprint sobre el charcoal */}
+      <div className="absolute inset-0 bg-blueprint-dark" />
+      {/* Glow naranja de marca */}
+      <div
+        className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full opacity-25 blur-[130px]"
+        style={{ background: "radial-gradient(circle, #f95d12 0%, transparent 70%)" }}
+      />
+      {/* Viñeta para foco en el centro */}
+      <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/0 via-neutral-950/20 to-neutral-950/80" />
+
       <div className="relative z-10 container-main text-center px-4">
         <div className="animate-fade-in">
           {/* Badge con urgencia */}
-          <div className="inline-flex items-center gap-2 bg-green-500/20 backdrop-blur-sm text-green-300 px-4 py-2 rounded-full text-sm mb-6 border border-green-500/30">
+          <div className="inline-flex items-center gap-2 bg-green-500/15 backdrop-blur-sm text-green-300 px-4 py-2 rounded-full text-sm mb-6 border border-green-500/30">
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
             Respondemos en minutos
           </div>
 
           {/* H1 ORIENTADO A GOOGLE ADS Y SEO */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 text-balance leading-tight">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-5 text-balance leading-[1.05] tracking-tight">
             Reparación de calderas
             <br />
             <span className="text-primary-400">en el día en CABA y GBA</span>
@@ -28,11 +45,11 @@ export default function Hero() {
 
           {/* Subtítulo con diferenciadores */}
           <p className="text-lg sm:text-xl text-neutral-300 mb-8 max-w-2xl mx-auto text-balance">
-            Técnicos calificados | Atención urgente | Servicio multimarca
+            Técnicos calificados · Atención urgente · Servicio multimarca
           </p>
 
           {/* CTAs - VISIBLES SIN SCROLL */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-5">
             <WhatsAppButton size="lg">Solicitar servicio ahora</WhatsAppButton>
 
             <a
@@ -49,30 +66,14 @@ export default function Hero() {
             Reparación en el día • Presupuesto claro
           </p>
 
-          {/* Confianzones */}
-          <div className="flex flex-wrap items-center justify-center gap-6 text-neutral-400 text-sm">
-            <div className="flex items-center gap-2">
-              <CheckIcon />
-              <span>+20 años en el rubro</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckIcon />
-              <span>Técnico titular</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckIcon />
-              <span>Mayoría de marcas</span>
-            </div>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-6 text-neutral-400 text-sm mt-2">
-            <div className="flex items-center gap-2">
-              <CheckIcon />
-              <span>Garantía propia</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckIcon />
-              <span>Servicio garantizado</span>
-            </div>
+          {/* Señales de confianza en una sola fila */}
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-neutral-400 text-sm border-t border-white/10 pt-6 max-w-3xl mx-auto">
+            {confianza.map((item) => (
+              <div key={item} className="flex items-center gap-2">
+                <CheckIcon />
+                <span>{item}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -80,7 +81,7 @@ export default function Hero() {
       {/* Indicador de scroll */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <svg
-          className="w-6 h-6 text-white/50"
+          className="w-6 h-6 text-white/40"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

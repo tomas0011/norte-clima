@@ -3,7 +3,8 @@
  * Lenguaje natural, no marketing
  */
 
-import { QuoteIcon } from './Icons';
+import { QuoteIcon, StarIcon } from './Icons';
+import { config } from '@/lib/config';
 
 const testimonios = [
   {
@@ -31,10 +32,11 @@ const testimonios = [
 
 export default function Testimonios() {
   return (
-    <section id="testimonios" className="py-20 bg-white/80">
+    <section id="testimonios" className="py-20 bg-white">
       <div className="container-main">
         {/* Encabezado */}
         <div className="text-center mb-16">
+          <span className="section-eyebrow">Prueba social</span>
           <h2 className="section-title">
             Clientes que nos recomendaron
           </h2>
@@ -48,11 +50,21 @@ export default function Testimonios() {
           {testimonios.map((testimonio) => (
             <div
               key={testimonio.id}
-              className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 relative"
+              className="relative bg-white rounded-xl border border-neutral-200 p-6 transition-all duration-300 hover:border-primary-300 hover:shadow-lg overflow-hidden"
             >
+              {/* Acento lateral de marca */}
+              <span className="absolute inset-y-0 left-0 w-1 bg-primary-500" />
+
               {/* Comillas */}
               <div className="absolute top-4 right-4 text-primary-100">
                 <QuoteIcon className="w-10 h-10" />
+              </div>
+
+              {/* Estrellas */}
+              <div className="flex gap-0.5 text-highlight-400 mb-4 relative z-10">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <StarIcon key={i} className="w-4 h-4" filled />
+                ))}
               </div>
 
               {/* Texto */}
@@ -62,7 +74,7 @@ export default function Testimonios() {
 
               {/* Autor */}
               <div className="border-t border-neutral-100 pt-4">
-                <p className="font-semibold text-neutral-900">
+                <p className="font-display font-semibold text-neutral-900">
                   {testimonio.nombre}
                 </p>
                 <p className="text-sm text-neutral-500">
@@ -76,7 +88,12 @@ export default function Testimonios() {
         {/* Nota */}
         <p className="text-center text-neutral-500 text-sm mt-12">
           ¿Tenés una emergencia con tu caldera?{' '}
-          <a href="#" className="text-primary-600 hover:underline font-medium">
+          <a
+            href={config.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-600 hover:underline font-medium"
+          >
             Escribinos por WhatsApp
           </a>
         </p>

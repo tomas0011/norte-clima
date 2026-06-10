@@ -25,7 +25,7 @@ const beneficios = [
   {
     titulo: "20+ años de experiencia",
     descripcion:
-      "Especialistas en Baxi y Caldaia. Diagnóstico rápido y preciso."
+      "Trabajamos con la mayoría de las marcas del mercado. Diagnóstico rápido y preciso."
   },
   {
     titulo: "Asesoramiento en compra e instalación",
@@ -41,8 +41,8 @@ const beneficios = [
 
 function BeneficioCard({ titulo, descripcion }: { titulo: string; descripcion: string }) {
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
-      <h3 className="text-lg font-bold text-neutral-900 mb-2">
+    <div className="bg-white rounded-xl p-6 border border-neutral-200 border-l-4 border-l-primary-500 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
+      <h3 className="font-display text-lg font-bold text-neutral-900 mb-2">
         {titulo}
       </h3>
       <p className="text-neutral-600 text-sm leading-relaxed">
@@ -54,10 +54,11 @@ function BeneficioCard({ titulo, descripcion }: { titulo: string; descripcion: s
 
 export default function Beneficios() {
   return (
-    <section id="beneficios" className="py-20">
+    <section id="beneficios" className="py-20 bg-white">
       <div className="container-main">
         {/* Encabezado */}
         <div className="text-center mb-16">
+          <span className="section-eyebrow">Por qué Norte Clima</span>
           <h2 className="section-title">¿Por qué llamarnos?</h2>
           <p className="section-subtitle">
             Somos un servicio técnico especializado en la reparación de
@@ -71,6 +72,7 @@ export default function Beneficios() {
           <HorizontalCarousel
             className="h-full"
             speed={60}
+            ariaLabel="Beneficios de nuestro servicio"
           >
             {beneficios.map((beneficio) => (
               <BeneficioCard

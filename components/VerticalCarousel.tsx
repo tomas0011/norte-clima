@@ -12,6 +12,7 @@ interface VerticalCarouselProps {
   className?: string;
   speed?: number; // segundos por scroll completo
   itemHeight?: number;
+  ariaLabel?: string;
 }
 
 export default function VerticalCarousel({
@@ -19,6 +20,7 @@ export default function VerticalCarousel({
   className = "",
   speed = 15,
   itemHeight = 88,
+  ariaLabel,
 }: VerticalCarouselProps) {
   // Duplicar los items para el loop infinito (4 ciclos)
   const childrenArray = Array.isArray(children) ? children : [children];
@@ -30,9 +32,12 @@ export default function VerticalCarousel({
   ];
 
   return (
-    <div 
+    <div
+      role="group"
+      aria-label={ariaLabel}
+      aria-roledescription="carrusel"
       className={`relative overflow-hidden ${className}`}
-      style={{ 
+      style={{
         maskImage: 'linear-gradient(to bottom, transparent, black 5%, black 95%, transparent)',
         WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 5%, black 95%, transparent)',
       }}

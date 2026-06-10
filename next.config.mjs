@@ -9,12 +9,6 @@ const nextConfig = {
     formats: ["image/avif", "image/webp"],
   },
 
-  // Configuración de i18n
-  i18n: {
-    locales: ["es"],
-    defaultLocale: "es",
-  },
-
   // Headers de seguridad
   async headers() {
     return [
@@ -28,6 +22,20 @@ const nextConfig = {
           {
             key: "X-Content-Type-Options",
             value: "nosniff",
+          },
+          {
+            // Fuerza HTTPS (Vercel sirve siempre por HTTPS)
+            key: "Strict-Transport-Security",
+            value: "max-age=31536000; includeSubDomains",
+          },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+          {
+            // Deshabilita APIs del navegador que el sitio no usa
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()",
           },
         ],
       },

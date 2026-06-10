@@ -22,7 +22,7 @@ const faqs = [
   {
     pregunta: "¿Qué marcas reparan?",
     respuesta:
-      "Trabajamos principalmente con Baxi y Caldaia, pero también atendemos otras marcas. Consultanos.",
+      "Somos un servicio multimarca: trabajamos con la mayoría de las marcas del mercado. Contanos qué caldera tenés y te confirmamos.",
   },
   {
     pregunta: "¿Cada cuánto conviene hacer mantenimiento a una caldera?",
@@ -77,6 +77,7 @@ export default function FAQ() {
       <div className="container-main">
         {/* Encabezado */}
         <div className="text-center mb-16">
+          <span className="section-eyebrow">Dudas comunes</span>
           <h2 className="section-title">Preguntas frecuentes</h2>
           <p className="section-subtitle">Lo que nos preguntan siempre</p>
         </div>
@@ -85,18 +86,21 @@ export default function FAQ() {
         <div className="max-w-2xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
             <div
-              key={index}
+              key={faq.pregunta}
               className="border border-neutral-200 rounded-lg overflow-hidden"
             >
               {/* Pregunta */}
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-respuesta-${index}`}
                 className="w-full flex items-center justify-between p-5 text-left bg-neutral-50 hover:bg-neutral-100 transition-colors duration-200"
               >
                 <span className="font-medium text-neutral-900 pr-4">
                   {faq.pregunta}
                 </span>
                 <svg
+                  aria-hidden="true"
                   className={`w-5 h-5 text-neutral-500 flex-shrink-0 transition-transform duration-200 ${openIndex === index ? "rotate-180" : ""
                     }`}
                   fill="none"
@@ -114,6 +118,9 @@ export default function FAQ() {
 
               {/* Respuesta */}
               <div
+                id={`faq-respuesta-${index}`}
+                role="region"
+                aria-hidden={openIndex !== index}
                 className={`overflow-hidden transition-all duration-200 ${openIndex === index ? "max-h-96" : "max-h-0"
                   }`}
               >

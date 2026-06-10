@@ -38,6 +38,11 @@ export const config = {
   // INFORMACIÓN DE LA EMPRESA
   // ============================================
   companyName: "Norte Clima",
+
+  // URL canónica del sitio. Fuente de verdad para metadataBase, canonical,
+  // sitemap, robots y JSON-LD. Override en deploy con NEXT_PUBLIC_SITE_URL.
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.norteclima.com.ar",
+
   phone: "+5491169127078",
   phoneFormatted: "11 6912-7078",
   phoneAlt: "+5491158403106",
