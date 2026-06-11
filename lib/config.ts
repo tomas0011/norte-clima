@@ -78,6 +78,13 @@ export const config = {
   tiempoRespuesta: "Casi inmediato",
 
   // ============================================
+  // TRACKING / ADS
+  // ============================================
+  // ID de conversión de Google Ads (gtag.js). Prefijo "AW-" = Google Ads.
+  // Se usa en app/layout.tsx para cargar gtag y reportar conversiones.
+  googleAdsId: "AW-18231601768",
+
+  // ============================================
   // MARCAS (NO son oficiales)
   // ============================================
   brands: ["Baxi", "Peisa", "Ariston", "Orbis", "Euterma", "Caldaia"] as const,
