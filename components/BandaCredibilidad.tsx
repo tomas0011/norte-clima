@@ -13,19 +13,15 @@ const datos = [
 
 export default function BandaCredibilidad() {
   return (
-    <section className="relative bg-neutral-950 overflow-hidden">
-      <div className="absolute inset-0 bg-blueprint-dark" />
-      {/* Línea de acento naranja superior */}
-      <div className="absolute inset-x-0 top-0 h-1 bg-primary-500" />
-
-      <div className="relative container-main py-12 md:py-14">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4 divide-y-0 lg:divide-x divide-white/10">
+    <section className="relative bg-neutral-50 border-y border-neutral-200">
+      <div className="container-main py-10 md:py-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4 lg:divide-x divide-neutral-200">
           {datos.map((dato) => (
             <div key={dato.etiqueta} className="text-center px-2">
-              <p className="font-display text-2xl md:text-3xl font-extrabold text-primary-400 tracking-tight">
+              <p className="font-display text-2xl md:text-3xl font-extrabold text-primary-600 tracking-tight">
                 {dato.valor}
               </p>
-              <p className="mt-1 text-sm text-neutral-400">{dato.etiqueta}</p>
+              <p className="mt-1 text-sm text-neutral-500">{dato.etiqueta}</p>
             </div>
           ))}
         </div>
