@@ -77,31 +77,24 @@ export default function ProblemasComunes() {
           </div>
 
           {/* Derecha: CTA */}
-          <div className="relative overflow-hidden bg-neutral-950 rounded-3xl p-8 flex flex-col items-center justify-center text-center text-white">
-            <div className="absolute inset-0 bg-blueprint-dark" />
-            <div
-              className="absolute -top-20 left-1/2 -translate-x-1/2 w-80 h-60 rounded-full opacity-30 blur-[90px]"
-              style={{ background: "radial-gradient(circle, #f95d12 0%, transparent 70%)" }}
-            />
-            <div className="relative z-10 flex flex-col items-center">
-              <div className="w-16 h-16 bg-primary-500/20 border border-primary-500/30 rounded-2xl flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
-              </div>
-              <h3 className="font-display text-2xl font-bold mb-4 text-white">
-                ¿Tu problema no está en la lista?
-              </h3>
-              <p className="text-neutral-300 mb-6 max-w-sm">
-                Lo revisamos igual. Contanos qué le pasa a tu caldera y te ayudamos.
-              </p>
-              <WhatsAppButton variant="primary" size="lg">
-                Describir mi problema
-              </WhatsAppButton>
-              <p className="text-neutral-400 text-sm mt-4">
-                Respondemos en minutos
-              </p>
+          <div className="relative overflow-hidden rounded-3xl p-8 flex flex-col items-center justify-center text-center bg-gradient-to-br from-primary-50 to-accent-50 border border-primary-100">
+            <div className="w-16 h-16 bg-white shadow-sm rounded-2xl flex items-center justify-center mb-6">
+              <svg className="w-8 h-8 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
             </div>
+            <h3 className="font-display text-2xl font-bold mb-4 text-neutral-900">
+              ¿Tu problema no está en la lista?
+            </h3>
+            <p className="text-neutral-600 mb-6 max-w-sm">
+              Lo revisamos igual. Contanos qué le pasa a tu caldera y te ayudamos.
+            </p>
+            <WhatsAppButton variant="primary" size="lg">
+              Describir mi problema
+            </WhatsAppButton>
+            <p className="text-neutral-500 text-sm mt-4">
+              Respondemos en minutos
+            </p>
           </div>
         </div>
       </div>
