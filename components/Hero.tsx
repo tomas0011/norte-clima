@@ -78,8 +78,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Indicador de scroll */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      {/* Indicador de scroll (solo desktop: en mobile el Hero ya está cargado de contenido) */}
+      <div className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <svg
           className="w-6 h-6 text-white/40"
           fill="none"
