@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Sora, Inter } from "next/font/google";
 import "./globals.css";
 import AuroraBackground from "@/components/AuroraBackground";
@@ -100,6 +101,20 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Google tag (gtag.js) - Google Ads. ID en config.googleAdsId.
+            strategy afterInteractive: no bloquea el render ni el LCP. */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${config.googleAdsId}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${config.googleAdsId}');
+          `}
+        </Script>
         <AuroraBackground />
         <Header />
         {children}
