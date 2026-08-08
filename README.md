@@ -161,6 +161,29 @@ Crear archivo en `app/nueva-pagina/page.tsx`.
 
 ---
 
+## Variables de Entorno
+
+Las variables `NEXT_PUBLIC_*` se inlinan en build-time: al cambiarlas hay que rebuildear y redeployar (Vercel), y en local reiniciar el dev server.
+
+### `NEXT_PUBLIC_SITE_URL`
+
+URL canónica del sitio. Es la fuente de verdad para `metadataBase`, canonical, sitemap, robots y JSON-LD (leída en `lib/config.ts`).
+
+- **Vercel (Production):** `https://www.norteclima.com.ar`
+- **Vercel (Preview):** dejar vacío o usar la URL del preview para no apuntar a prod.
+- **Local:** definir en `.env.local`.
+- **Sin definir:** el código usa el fallback de `lib/config.ts`.
+
+### `NEXT_PUBLIC_GOOGLE_ADS_ID`
+
+ID del Google tag (Google Ads). Se usa en `app/layout.tsx` para cargar gtag.js y reportar conversiones.
+
+- **⚠️ OBLIGATORIA en Vercel (Production).** Configurarla en el environment `Production` con el ID correcto del cliente: `AW-18377151756`. Sin ella el tag cae al fallback de `lib/config.ts` (ID viejo de desarrollo), con riesgo de reportar conversiones con un ID equivocado.
+- **Local:** definirla en `.env.local` (ej: `NEXT_PUBLIC_GOOGLE_ADS_ID=AW-18377151756`) y reiniciar el dev server.
+- **Cambios:** como toda `NEXT_PUBLIC_*`, se inlina en build-time; requiere rebuild + redeploy en Vercel.
+
+---
+
 ## Scripts Disponibles
 
 | Script          | Descripción                |
