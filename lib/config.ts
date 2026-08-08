@@ -82,7 +82,14 @@ export const config = {
   // ============================================
   // ID de conversión de Google Ads (gtag.js). Prefijo "AW-" = Google Ads.
   // Se usa en app/layout.tsx para cargar gtag y reportar conversiones.
-  googleAdsId: "AW-18231601768",
+  // IMPORTANTE: NEXT_PUBLIC_GOOGLE_ADS_ID es OBLIGATORIA en el deploy
+  // (configurar en Vercel Production). El default de abajo es un PLACEHOLDER
+  // de warning a propósito, NO un ID real: si se imprime/usa tal cual no
+  // reporta nada y deja en evidencia que falta configurar la env.
+  // ID correcto del cliente (a configurar en Vercel Production):
+  // AW-18377151756
+  googleAdsId:
+    (process.env.NEXT_PUBLIC_GOOGLE_ADS_ID ?? "AW-MISSING-GOOGLE-ADS-ID") as string,
 
   // ============================================
   // MARCAS (NO son oficiales)

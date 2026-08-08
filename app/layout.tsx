@@ -94,11 +94,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // ID del Google tag (Google Ads). Prioridad a la env var para configurar
-  // sin tocar lib/config.ts; fallback al valor centralizado de config.
-  const googleAdsId =
-    process.env.NEXT_PUBLIC_GOOGLE_ADS_ID ?? config.googleAdsId;
-
   return (
     <html lang="es" className={`${inter.variable} ${sora.variable}`}>
       <body className="antialiased">
@@ -106,11 +101,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {/* Google tag (gtag.js) - Google Ads. ID priorizado por env var
-            (NEXT_PUBLIC_GOOGLE_ADS_ID) con fallback a config.googleAdsId.
+        {/* Google tag (gtag.js) - Google Ads. ID en config.googleAdsId
+            (alimentado por NEXT_PUBLIC_GOOGLE_ADS_ID, OBLIGATORIA; el default
+            de config es un placeholder de warning, no un ID real).
             strategy afterInteractive: no bloquea el render ni el LCP. */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${googleAdsId}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${config.googleAdsId}`}
           strategy="afterInteractive"
         />
         <Script id="gtag-init" strategy="afterInteractive">
@@ -118,7 +114,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${googleAdsId}');
+            gtag('config', '${config.googleAdsId}');
           `}
         </Script>
         <AuroraBackground />

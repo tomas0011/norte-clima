@@ -176,11 +176,11 @@ URL canónica del sitio. Es la fuente de verdad para `metadataBase`, canonical, 
 
 ### `NEXT_PUBLIC_GOOGLE_ADS_ID`
 
-ID del Google tag (Google Ads). Se usa en `app/layout.tsx` para cargar gtag.js y reportar conversiones.
+ID del Google tag (Google Ads). **OBLIGATORIA para producción.** Se consume en `app/layout.tsx` para cargar gtag.js y reportar conversiones, con single source en `lib/config.ts` (allí se lee `process.env.NEXT_PUBLIC_GOOGLE_ADS_ID`).
 
-- **⚠️ OBLIGATORIA en Vercel (Production).** Configurarla en el environment `Production` con el ID correcto del cliente: `AW-18377151756`. Sin ella el tag cae al fallback de `lib/config.ts` (ID viejo de desarrollo), con riesgo de reportar conversiones con un ID equivocado.
-- **Local:** definirla en `.env.local` (ej: `NEXT_PUBLIC_GOOGLE_ADS_ID=AW-18377151756`) y reiniciar el dev server.
-- **Cambios:** como toda `NEXT_PUBLIC_*`, se inlina en build-time; requiere rebuild + redeploy en Vercel.
+- **Producción (cliente):** `AW-18377151756`. Ejemplo `.env.local`: `NEXT_PUBLIC_GOOGLE_ADS_ID=AW-18377151756`
+- **Sin definir:** el código usa un placeholder NOT-A-ID (`AW-MISSING-GOOGLE-ADS-ID`), visible en network; el site obviamente no reporta conversiones correctamente. Es una advertencia de que falta configurar la env. No hay fallback con un ID real.
+- **Cambios:** como toda `NEXT_PUBLIC_*`, se inlina en build-time; requiere rebuild + redeploy en Vercel (y reiniciar el dev server en local).
 
 ---
 
