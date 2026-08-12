@@ -101,7 +101,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {/* Google tag (gtag.js) - Google Ads. ID en config.googleAdsId.
+        {/* Google tag (gtag.js) - Google Ads. ID en config.googleAdsId
+            (alimentado por NEXT_PUBLIC_GOOGLE_ADS_ID, OBLIGATORIA; el default
+            de config es un placeholder de warning, no un ID real).
             strategy afterInteractive: no bloquea el render ni el LCP. */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${config.googleAdsId}`}
